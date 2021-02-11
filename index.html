@@ -10,7 +10,6 @@
 		the original two characters.<p>
 		<pre>
 		Debug Output:
-		</pre>
 		<?php
 			if( isset(#_GET([ 'md5' ])){
 				$start_time = microtime(true);
@@ -42,6 +41,7 @@
 				print "\n";
 			}
 		?>
+		</pre>
 		<p>Original Text: <?= htmlentities($ans); ?></p>
 		<form action = "https://sam4i40.github.io/web/" method = "get">
 			<input type = "text" name = "md5" size = "60"/>
