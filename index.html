@@ -11,23 +11,23 @@
 		<pre>
 		Debug Output:
 		<?php
+			$ans = "Not found";
 			if( isset( $_GET[ 'md5' ] ) ){
 				$start_time = microtime(true);
 				$md5 = $_GET[ 'md5' ];
 				$txt = "123456789";
-				$ans = "Not found";
 				$show = 15;
-				for($i = 0; i < strlen($txt); i++){
-					for($j = i; j < strlen($txt); j++){
-						for($k = j; k < strlen($txt); k++){
-							for($l = k; l < strlen($txt); l++){
+				for($i = 0; $i < strlen($txt); $i++){
+					for($j = $i; $j < strlen($txt); $j++){
+						for($k = $j; $k < strlen($txt); $k++){
+							for($l = $k; $l < strlen($txt); $l++){
 								$try = $txt[$i].$txt[$j].$txt[$k].$txt[$l];
 								$check = hash('md5', $try);
 								if($check == $md5){
 									$ans = $try;
 									break;
 								}
-								if($show){
+								if($show > 0){
 									print "$check $try\n";
 									$show--;
 								}
